@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+USERS=$(git config user.name)
+EMAIL=$(git config user.email)
+
+echo "git user:  $USERS"
+echo "git email: $EMAIL"

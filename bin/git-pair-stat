@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'git_ext'
+
+puts GitExt::PairStat::CLI.run(repo: '.', initials: ARGV.first)

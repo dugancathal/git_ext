@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'git_ext'
+
+GitExt::Pair::CLI.run(repo: '.', initials: ARGV)

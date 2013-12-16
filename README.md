@@ -1,24 +1,31 @@
-# GitPair
+# GitExt
 
-TODO: Write a gem description
+A set of git scripts written for practice.
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'git_pair'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install git_pair
 
 ## Usage
 
-TODO: Write usage instructions here
+Installing gives you:
+
+    $ git pair
+    $ git about
+    $ git pair-stat
+
+## Git Pair
+
+Pair up several committers and commit with their names/emails. Inspired by the
+Pivotal Labs git-pair script.
+
+## Git About
+
+Show some basic information about who is committing.
+
+## Git Pair Stat
+
+Show all the pairs for a given committer.
 
 ## Contributing
 

@@ -7,8 +7,8 @@ Gem::Specification.new do |spec|
   spec.version       = GitExt::VERSION
   spec.authors       = ["TJ Taylor"]
   spec.email         = ["dugancathal@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Some git scripts}
+  spec.summary       = %q{A few git scripts to make git'ting easier for pairs}
   spec.homepage      = ""
   spec.license       = "MIT"
 

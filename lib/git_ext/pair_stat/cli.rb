@@ -13,14 +13,14 @@ module GitExt
       end
 
       def commits
-        `git log --format='%ci|%an' | grep #{querant}`.split("\n")
+        @commits ||= `git log --format='%ci|%an' | grep #{querant}`.split("\n")
       end
 
       def commits_by_collaborators
         memo = Hash.new {|h, k| h[k] = [] }
         commits.each_with_object(memo) do |commit, h|
           date, committers = commit.split('|')
-          committers = committers.split(' and ')
+          committers = committers.split(/,? (?:and|&) |, /)
           committers = committers == [querant] ? ['Solo'] : committers
           committers.each do |committer|
             next if committer == querant

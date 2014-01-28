@@ -13,7 +13,7 @@ module GitExt
       end
 
       def commits
-        @commits ||= `git log --format='%ci|%an' | grep #{querant}`.split("\n")
+        @commits ||= `git log --format='%ci|%an' | grep "#{querant}"`.split("\n")
       end
 
       def commits_by_collaborators

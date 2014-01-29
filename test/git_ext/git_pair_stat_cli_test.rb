@@ -47,7 +47,7 @@ class GitPairStatCliTest < MiniTest::Test
     in_git_repo do |repo|
       create_git_history
       report = GitExt::PairStat::CLI.new(repo: repo, initials: 'ma').report_on('Cosette')
-      assert_equal 'Cosette              1        3        50%', report
+      assert_match /Cosette\s+1\s+3\s+50%/, report
     end
   end
 

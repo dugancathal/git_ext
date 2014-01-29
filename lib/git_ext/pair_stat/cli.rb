@@ -44,7 +44,7 @@ module GitExt
       end
 
       def report_on(collaborator)
-        "%-15s      %-4d     %-7d  %-d%%" % [
+        "%-15s\t\t\t%-4d\t\t%-7d\t%-d%%" % [
           collaborator,
           days_worked_with(collaborator),
           commits_by_collaborators[collaborator].count,
@@ -56,8 +56,8 @@ module GitExt
         <<-REPORT.gsub(/^ {10}/, '')
           Pairing stats for #{querant}
 
-          Developer            Days     Commits  %
-          ---------------      ----     -------  ----
+          Developer\t\t\tDays\t\tCommits\t%
+          ---------------\t\t\t----\t\t-------\t----
           #{commits_by_collaborators.keys.map {|collab| report_on(collab)}.sort.join("\n")}
         REPORT
       end

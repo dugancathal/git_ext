@@ -34,14 +34,10 @@ class CLITest < Minitest::Test
     in_git_repo do
       create_git_history
 
-      assert_equal <<-STAT.gsub(/^ {8}/, ''), `git pair-stat ma`
-        Pairing stats for Marius
-
-        Developer            Days     Commits  %
-        ---------------      ----     -------  ----
-        Cosette              1        3        50%
-        Jean Valjean         1        1        50%
-      STAT
+      result = `git pair-stat ma`
+      assert_match /Pairing stats for Marius/, result
+      assert_match /Cosette\s+1\s+3\s+50%/, result
+      assert_match /Jean Valjean\s+1\s+1\s+50%/, result
     end
   end
 end
